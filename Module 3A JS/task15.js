@@ -35,7 +35,7 @@ const books = [
 ];
 
 for(let i= 0; i<books.length; i++) {
-    let book = books[i]
+    let book = books[i]  //this was to assign each entry of the array into a variable per iteration
     if(book.reading===true) {
         console.log(book)
     }

@@ -1,3 +1,4 @@
+
 // TASK FOR PRIMITIVE DATA TYPES(STRINGS AND NUMBERS)
 
 const day = 'Sunday'

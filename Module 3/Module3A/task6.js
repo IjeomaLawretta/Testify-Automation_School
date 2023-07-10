@@ -1,3 +1,4 @@
+
 // IF ELSE STATEMENTS
 
 const number = 65

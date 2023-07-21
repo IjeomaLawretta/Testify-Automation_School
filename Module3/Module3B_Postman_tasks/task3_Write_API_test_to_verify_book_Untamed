@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "0b03fe41-11a7-4008-bdf4-c38fff19f024",
+		"name": "Task3_Module3B",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17575332",
+		"_collection_link": "https://planetary-trinity-709723.postman.co/workspace/My-Learning-(TAS)~70a6ae66-a7b5-4a17-9e38-2e604effdcc9/collection/17575332-0b03fe41-11a7-4008-bdf4-c38fff19f024?action=share&creator=17575332&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Write API test to verify book Untamed",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",() => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"const response = pm.response.json();\r",
+							"\r",
+							"console.log(pm.response.status);\r",
+							"\r",
+							"const nonFictionBooks = response.filter((book) => book.available === true);\r",
+							"\r",
+							"const book = (nonFictionBooks[0]);\r",
+							"\r",
+							"pm.test(\"Books Found\", ()=> {\r",
+							"    pm.expect(book).to.be.an(\"object\");\r",
+							"    pm.expect(book.available).to.eql(true);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Books Name\", ()=> {\r",
+							"    pm.expect(book.name).to.eql(\"Untamed\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books?type=non-fiction",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "non-fiction"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

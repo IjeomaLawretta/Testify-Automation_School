@@ -1,37 +1,45 @@
 {
-	"id": "da0fea65-f85a-418c-8c42-eb4f740d0ab1",
+	"id": "2d74aad2-35a7-43f5-a7ff-8d8c142a0ea5",
+	"name": "TAS-Test Environment",
 	"values": [
 		{
-			"key": "orderId",
-			"value": "",
+			"key": "password",
+			"value": "123456",
 			"type": "default",
 			"enabled": true
 		},
 		{
-			"key": "variableKey",
-			"value": "",
+			"key": "name",
+			"value": "lawretta",
 			"type": "default",
 			"enabled": true
 		},
 		{
-			"key": "apiKey",
-			"value": "some api key",
+			"key": "location",
+			"value": "postman",
+			"type": "default",
 			"enabled": true
 		},
 		{
-			"key": "userId",
-			"value": "123",
+			"key": "UserID",
+			"value": "1",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "username",
+			"value": "",
 			"type": "any",
 			"enabled": true
 		},
 		{
-			"key": "baseUrl",
-			"value": "https://simple-books-api.glitch.me",
+			"key": "bookId",
+			"value": "",
+			"type": "any",
 			"enabled": true
 		}
 	],
-	"name": "Globals",
-	"_postman_variable_scope": "globals",
-	"_postman_exported_at": "2023-07-22T17:07:27.528Z",
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-07-31T19:47:32.839Z",
 	"_postman_exported_using": "Postman/10.16.5-230720-1557"
 }

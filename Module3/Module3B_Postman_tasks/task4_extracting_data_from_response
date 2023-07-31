@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "12a8e717-c930-4df4-a5b7-c85ca95a60da",
+		"name": "Task 4 lesson 5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17575332",
+		"_collection_link": "https://planetary-trinity-709723.postman.co/workspace/My-Learning-(TAS)~70a6ae66-a7b5-4a17-9e38-2e604effdcc9/collection/17575332-12a8e717-c930-4df4-a5b7-c85ca95a60da?action=share&creator=17575332&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "List of books extraction data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"console.log(jsonData[0].id);\r",
+							"console.log(jsonData[0].name);\r",
+							"\r",
+							"pm.environment.set(\"bookId\", jsonData[0].id);\r",
+							"\r",
+							"pm.test(\"Verify the book id with the name THE RUSSIAN\" + jsonData[0].name + \"\" , function () {\r",
+							"    pm.expect(\"The Russian\").to.eql(jsonData[0].name);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify the book id \" + jsonData[0].id + \"\" , function () {\r",
+							"    pm.expect(jsonData[0].id).to.eql(jsonData[0].id);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://simple-books-api.glitch.me/books",
+					"protocol": "https",
+					"host": [
+						"simple-books-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "non-fiction",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order for the item using the environment variable that was parsed",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a58a2aef30c150b323da6cc834e1d831e8de11c53baf29a1ccb4e19428665cda",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"clientName\": \"Ijeoma\",\r\n   \"bookId\": {{bookId}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/orders",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorisation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"clientName\": \"Ijeoma\",\r\n   \"clientEmail\": \"deelawretta@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api-clients/?valueForBookId={{bookId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api-clients",
+						""
+					],
+					"query": [
+						{
+							"key": "valueForBookId",
+							"value": "{{bookId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

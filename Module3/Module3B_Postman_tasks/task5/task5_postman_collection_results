@@ -1,0 +1,471 @@
+{
+	"id": "f45038f4-7161-4508-a306-731805f10165",
+	"name": "MODULE_3B",
+	"timestamp": "2023-07-31T19:05:58.167Z",
+	"collection_id": "17575332-5a820fb7-820e-44b0-a309-012304a4768f",
+	"folder_id": 0,
+	"environment_id": "17575332-14dad69c-1e61-4141-9644-9300ca0800fb",
+	"totalPass": 12,
+	"delay": 0,
+	"persist": true,
+	"status": "error",
+	"startedAt": "2023-07-31T19:05:53.379Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "c324c058-931c-4c5e-909b-7b874209e501",
+			"name": "Request must return 200 OK",
+			"url": "https://jsonplaceholder.typicode.com/posts",
+			"time": 106,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				106
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "0d585cba-0448-4904-b215-49dc6db15139",
+			"name": "Request must return 201 Created",
+			"url": "https://jsonplaceholder.typicode.com/posts",
+			"time": 202,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				202
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "78fa663b-b6f5-47db-ae73-ba29c6d8de22",
+			"name": "Request must return 204 No Content",
+			"url": "https://jsonplaceholder.typicode.com/posts/1",
+			"time": 189,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				189
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1bee679c-3e12-4317-b4b5-e12e7c02faac",
+			"name": "Walkthrough Postman lesson",
+			"url": "https://www.google.com/search?q=ijeoma emma-ugulu",
+			"time": 111,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Status code name is OK": true,
+				"Response time is less than 200ms": true,
+				"Content-Type is present": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				111
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Status code name is OK": true,
+					"Response time is less than 200ms": true,
+					"Content-Type is present": true
+				}
+			]
+		},
+		{
+			"id": "8fa2cb58-ee4f-4aad-aa14-f9e760a319d1",
+			"name": "API test to verify book Untamed",
+			"url": "https://simple-books-api.glitch.me/books?type=non-fiction",
+			"time": 408,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Books Name": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Books Name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				408
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Books Name": true
+				}
+			]
+		},
+		{
+			"id": "4320c7e5-a5f1-457d-a7d6-03d013bc2c4d",
+			"name": "Re-use variables",
+			"url": "https://postman-echo.com/post?Id=userId",
+			"time": 411,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				411
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7b18ba03-e466-4e21-af4d-8913f6640e82",
+			"name": "Hide sensitive info",
+			"url": "https://postman-echo.com/get",
+			"time": 94,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				94
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "2978e56e-9622-4cb9-98f9-64c404b88457",
+			"name": "Update variable values (Increment parameters)",
+			"url": "https://postman-echo.com/get?value=userId3",
+			"time": 97,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				97
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "4cb02235-edef-4e6e-8ae6-83ebc566b701",
+			"name": "Use variables from files",
+			"url": "https://postman-echo.com/post?Id=userId3",
+			"time": 99,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				99
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "855aa0b8-7850-4c58-b706-56e297e9706a",
+			"name": "List of books extraction data",
+			"url": "https://simple-books-api.glitch.me/books",
+			"time": 104,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verify the book id with the name THE RUSSIANThe Russian": true,
+				"Verify the book id 1": true
+			},
+			"testPassFailCounts": {
+				"Verify the book id with the name THE RUSSIANThe Russian": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify the book id 1": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				104
+			],
+			"allTests": [
+				{
+					"Verify the book id with the name THE RUSSIANThe Russian": true,
+					"Verify the book id 1": true
+				}
+			]
+		},
+		{
+			"id": "c1a20aba-aa11-4eac-85cc-d2d3336112c1",
+			"name": "Order for the item using the environment variable that was parsed",
+			"url": "https://simple-books-api.glitch.me/orders",
+			"time": 221,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				221
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8375a5ba-6a23-4652-b92b-4211701093eb",
+			"name": "Authorisation",
+			"url": "https://simple-books-api.glitch.me/api-clients/?valueForBookId=1",
+			"time": 241,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				241
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "63614ef9-fc25-4841-95f8-dd441e7aad11",
+			"name": "Re-use Variables",
+			"url": "https://postman-echo.com/post",
+			"time": 98,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Confirm name is Ijeoma": true
+			},
+			"testPassFailCounts": {
+				"Confirm name is Ijeoma": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				98
+			],
+			"allTests": [
+				{
+					"Confirm name is Ijeoma": true
+				}
+			]
+		},
+		{
+			"id": "3b8c928d-6697-4f48-967e-ea0a75f80ae1",
+			"name": "Lists",
+			"url": "https://jsonplaceholder.typicode.com/posts",
+			"time": 37,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"This confirms the id of the 8th value is 8": true
+			},
+			"testPassFailCounts": {
+				"This confirms the id of the 8th value is 8": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				37
+			],
+			"allTests": [
+				{
+					"This confirms the id of the 8th value is 8": true
+				}
+			]
+		},
+		{
+			"id": "a19904d8-3ebe-4a42-b8c5-535b1c7879cc",
+			"name": "Array",
+			"url": "https://www.randomlists.com/data/names-male.json",
+			"time": 97,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Confirm the name is Lukas": true
+			},
+			"testPassFailCounts": {
+				"Confirm the name is Lukas": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				97
+			],
+			"allTests": [
+				{
+					"Confirm the name is Lukas": true
+				}
+			]
+		},
+		{
+			"id": "e0348dd8-e7eb-4cf5-af2c-6f07e7906e6e",
+			"name": "XML",
+			"url": "http://restapi.adequateshop.com/api/Traveler?page=1",
+			"time": 394,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Confirm the email is karen@mail.ru": true
+			},
+			"testPassFailCounts": {
+				"Confirm the email is karen@mail.ru": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				394
+			],
+			"allTests": [
+				{
+					"Confirm the email is karen@mail.ru": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 2909,
+	"collection": {
+		"requests": [
+			{
+				"id": "c324c058-931c-4c5e-909b-7b874209e501",
+				"method": "GET"
+			},
+			{
+				"id": "0d585cba-0448-4904-b215-49dc6db15139",
+				"method": "POST"
+			},
+			{
+				"id": "78fa663b-b6f5-47db-ae73-ba29c6d8de22",
+				"method": "DELETE"
+			},
+			{
+				"id": "1bee679c-3e12-4317-b4b5-e12e7c02faac",
+				"method": "GET"
+			},
+			{
+				"id": "8fa2cb58-ee4f-4aad-aa14-f9e760a319d1",
+				"method": "GET"
+			},
+			{
+				"id": "4320c7e5-a5f1-457d-a7d6-03d013bc2c4d",
+				"method": "POST"
+			},
+			{
+				"id": "7b18ba03-e466-4e21-af4d-8913f6640e82",
+				"method": "GET"
+			},
+			{
+				"id": "2978e56e-9622-4cb9-98f9-64c404b88457",
+				"method": "GET"
+			},
+			{
+				"id": "4cb02235-edef-4e6e-8ae6-83ebc566b701",
+				"method": "POST"
+			},
+			{
+				"id": "855aa0b8-7850-4c58-b706-56e297e9706a",
+				"method": "GET"
+			},
+			{
+				"id": "c1a20aba-aa11-4eac-85cc-d2d3336112c1",
+				"method": "POST"
+			},
+			{
+				"id": "8375a5ba-6a23-4652-b92b-4211701093eb",
+				"method": "POST"
+			},
+			{
+				"id": "63614ef9-fc25-4841-95f8-dd441e7aad11",
+				"method": "POST"
+			},
+			{
+				"id": "3b8c928d-6697-4f48-967e-ea0a75f80ae1",
+				"method": "GET"
+			},
+			{
+				"id": "a19904d8-3ebe-4a42-b8c5-535b1c7879cc",
+				"method": "GET"
+			},
+			{
+				"id": "e0348dd8-e7eb-4cf5-af2c-6f07e7906e6e",
+				"method": "GET"
+			},
+			{
+				"id": "38a613d8-1c19-4a50-a179-280e62ef7b5c",
+				"method": "GET"
+			}
+		]
+	}
+}

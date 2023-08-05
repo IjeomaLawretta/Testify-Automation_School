@@ -1,0 +1,45 @@
+{
+	"id": "2d74aad2-35a7-43f5-a7ff-8d8c142a0ea5",
+	"name": "TASTest Environment",
+	"values": [
+		{
+			"key": "password",
+			"value": "123456",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "name",
+			"value": "lawretta",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "location",
+			"value": "postman",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "UserID",
+			"value": "1",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "username",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "bookId",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-08-05T17:03:10.109Z",
+	"_postman_exported_using": "Postman/10.16.7-230801-1934"
+}

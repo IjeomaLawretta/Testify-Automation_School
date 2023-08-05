@@ -1,0 +1,437 @@
+{
+	"info": {
+		"_postman_id": "5a820fb7-820e-44b0-a309-012304a4768f",
+		"name": "MODULE_3B",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17575332",
+		"_collection_link": "https://planetary-trinity-709723.postman.co/workspace/My-Learning-(TAS)~70a6ae66-a7b5-4a17-9e38-2e604effdcc9/collection/17575332-5a820fb7-820e-44b0-a309-012304a4768f?action=share&creator=17575332&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Lesson 3 (Write your first API test)",
+			"item": [
+				{
+					"name": "Walkthrough Postman lesson",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name is OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.lessThan(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Transfer-Encoding\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.google.com/search?q=ijeoma emma-ugulu",
+							"protocol": "https",
+							"host": [
+								"www",
+								"google",
+								"com"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "ijeoma emma-ugulu"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lesson 4 (API Variables)",
+			"item": [
+				{
+					"name": "Re-use variables",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"{{userId}}\",\r\n    \"name\": \"Ijeoma\",\r\n    \"location\": \"In postman\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://postman-echo.com/post?Id={{userId}}",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "{{userId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hide sensitive info",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "apiKey",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/get",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update variable values (Increment parameters)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// increment random values by +, -, /, *, %\r",
+									"let localVal = pm.globals.get(\"userId\")\r",
+									"// let testEnVal = pm.environment.get(\"UserId\");\r",
+									"\r",
+									" pm.globals.set(\"userId\", localVal+3)\r",
+									"\r",
+									"// Random Phone Number for test\r",
+									"\r",
+									"var EightDigit = Math.floor(Math.random() * 1000000000);\r",
+									"phoneNumber = '080' + EightDigit\r",
+									"console.log(phoneNumber)\r",
+									"\r",
+									"\r",
+									"//  To Generate OTP code\r",
+									"var sixDigit = Math.floor(Math.random() * 1000000);\r",
+									"console.log(sixDigit)\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/get?value={{userId}}",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "value",
+									"value": "{{userId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Use variables from files",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": {{name}},\r\n    \"location\": {{location}},\r\n    \"username\": {{username}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://postman-echo.com/post?Id={{userId}}",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "{{userId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lesson 5 (Extracting data)",
+			"item": [
+				{
+					"name": "Re-use Variables",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"console.log(jsonData.data.name)\r",
+									"console.log(jsonData.url)\r",
+									"\r",
+									"// set an environment variable/value\r",
+									"pm.environment.set(\"username\", jsonData.data.name);\r",
+									"\r",
+									"// Test One: Test to confirm name is Ijeoma\r",
+									"\r",
+									"pm.test(\"Confirm name is Ijeoma\", function () {\r",
+									"    pm.expect(jsonData.data.name).to.eql('Ijeoma');\r",
+									"});\r",
+									"/* OR\r",
+									"pm.test(\"Confirm name is \"  + jsonData.data.name + \"\", function () {\r",
+									"    pm.expect(\"Ijeoma\").to.eql(jsonData.data.name);\r",
+									"});\r",
+									"    OR\r",
+									"pm.test(\"Confirm name is Ijeoma\", function () {\r",
+									"    pm.expect(\"Ijeoma\").to.eql(jsonData.data.name);\r",
+									"});\r",
+									"*/\r",
+									"\r",
+									"// headers response\r",
+									"var headersResponse = pm.response.headers.all();\r",
+									"console.log(headersResponse[0].value)\r",
+									"// set a global variable for headers\r",
+									"pm.globals.set(\"globalHeaderDateValue\", headersResponse[0].value);\r",
+									"\r",
+									"//cookies response \r",
+									"var cookiesResponse = pm.cookies.get('sails.sid');\r",
+									"console.log(cookiesResponse)\r",
+									"\r",
+									"//set a collection variable\r",
+									"pm.collectionVariables.set(\"cookiesResponse\", cookiesResponse);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"{{userId}}\",\r\n    \"name\": \"Ijeoma\",\r\n    \"location\": \"In postman\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://postman-echo.com/post",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"console.log(jsonData[7].id)\r",
+									"\r",
+									"\r",
+									"// Test One: Test to confirm ID in response body\r",
+									"\r",
+									"pm.test(\"This confirms the id of the 8th value is \" + jsonData[7].id +\"\", function () {\r",
+									"    pm.expect(8).to.eql(jsonData[7].id);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Array",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"console.log(jsonData)\r",
+									"console.log(jsonData.data[244])\r",
+									"\r",
+									"\r",
+									"// Test One: Test to confirm name in array \r",
+									"\r",
+									"pm.test(\"Confirm the name is \" + jsonData.data[244]+\"\", function () {\r",
+									"    pm.expect(\"Lukas\").to.eql(jsonData.data[244]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.randomlists.com/data/names-male.json",
+							"protocol": "https",
+							"host": [
+								"www",
+								"randomlists",
+								"com"
+							],
+							"path": [
+								"data",
+								"names-male.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "XML",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonObject = xml2Json(responseBody);\r",
+									"console.log(jsonObject.TravelerinformationResponse.travelers.Travelerinformation[9].email);\r",
+									"\r",
+									"let travelersEmail = jsonObject.TravelerinformationResponse.travelers.Travelerinformation[9].email;\r",
+									"\r",
+									"// Test One: Test to confirm email in XML file\r",
+									"\r",
+									"pm.test(\"Confirm the email is \" + travelersEmail +\"\", function () {\r",
+									"    pm.expect(\"karen@mail.ru\").to.eql(travelersEmail);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restapi.adequateshop.com/api/Traveler?page=1",
+							"protocol": "http",
+							"host": [
+								"restapi",
+								"adequateshop",
+								"com"
+							],
+							"path": [
+								"api",
+								"Traveler"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "cookiesResponse",
+			"value": ""
+		}
+	]
+}

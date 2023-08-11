@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "e2c30c6e-dcc5-47e8-b4ac-7a89ba5e4472",
+		"name": "TASStudentCourse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Re-use variables",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a617457c-9404-4b25-8496-40ba45815ea9",
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"console.log(jsonData.data.name)\r",
+							"console.log(jsonData.url)\r",
+							"\r",
+							"// set an environment variable/value\r",
+							"pm.environment.set(\"username\", jsonData.data.name);\r",
+							"\r",
+							"// Test One: Test to confirm name is Ijeoma\r",
+							"\r",
+							"pm.test(\"Confirm name is Ijeoma\", function () {\r",
+							"    pm.expect(jsonData.data.name).to.eql('Ijeoma');\r",
+							"});\r",
+							"/* OR\r",
+							"pm.test(\"Confirm name is \"  + jsonData.data.name + \"\", function () {\r",
+							"    pm.expect(\"Ijeoma\").to.eql(jsonData.data.name);\r",
+							"});\r",
+							"    OR\r",
+							"pm.test(\"Confirm name is Ijeoma\", function () {\r",
+							"    pm.expect(\"Ijeoma\").to.eql(jsonData.data.name);\r",
+							"});\r",
+							"*/\r",
+							"\r",
+							"// headers response\r",
+							"var headersResponse = pm.response.headers.all();\r",
+							"console.log(headersResponse[0].value)\r",
+							"// set a global variable for headers\r",
+							"pm.globals.set(\"globalHeaderDateValue\", headersResponse[0].value);\r",
+							"\r",
+							"//cookies response \r",
+							"var cookiesResponse = pm.cookies.get('sails.sid');\r",
+							"console.log(cookiesResponse)\r",
+							"\r",
+							"//set a collection variable\r",
+							"pm.collectionVariables.set(\"cookiesResponse\", cookiesResponse);\r",
+							"\r",
+							"//Bonus lesson 1: Request execution order\r",
+							"postman.setNextRequest(\"Lists\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "4f48c22a-f230-44ed-b188-5ff8e55ee097",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{{userId}}\",\r\n    \"name\": \"Ijeoma\",\r\n    \"location\": \"In postman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://postman-echo.com/post"
+			},
+			"response": []
+		},
+		{
+			"name": "Increment parameters",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2a1d671c-2d08-4044-a436-c784ff39b0e9",
+						"exec": [
+							"// increment random values by +, -, /, *, %\r",
+							"let localVal = pm.globals.get(\"userId\")\r",
+							"// let testEnVal = pm.environment.get(\"UserId\");\r",
+							"\r",
+							" pm.globals.set(\"userId\", localVal+3)\r",
+							"\r",
+							"// Random Phone Number for test\r",
+							"\r",
+							"var EightDigit = Math.floor(Math.random() * 1000000000);\r",
+							"phoneNumber = '080' + EightDigit\r",
+							"console.log(phoneNumber)\r",
+							"\r",
+							"\r",
+							"//  To Generate OTP code\r",
+							"var sixDigit = Math.floor(Math.random() * 1000000);\r",
+							"console.log(sixDigit)\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "976a6f9d-d621-45eb-84b7-3a9194c5820b",
+						"exec": [
+							"//Bonus lesson 2: Request execution order\r",
+							"postman.setNextRequest(\"Array\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "9c9251af-cb8f-4748-9725-27d548f66145",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?value={{userId}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lists",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e86b72ef-523d-404e-acf3-e6b5ca035ab9",
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"console.log(jsonData[7].id)\r",
+							"\r",
+							"\r",
+							"// Test One: Test to confirm ID in response body\r",
+							"\r",
+							"pm.test(\"This confirms the id of the 8th value is \" + jsonData[7].id +\"\", function () {\r",
+							"    pm.expect(8).to.eql(jsonData[7].id);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"//Bonus lesson 2: Request execution order\r",
+							"postman.setNextRequest(\"Increment parameters\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "8d37e70e-1afb-477a-b3ed-8e54afbb1aa0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Array",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d825ad61-6277-4510-8964-d73dc8829590",
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"console.log(jsonData)\r",
+							"console.log(jsonData.data[244])\r",
+							"\r",
+							"\r",
+							"// Test One: Test to confirm name in array \r",
+							"\r",
+							"pm.test(\"Confirm the name is \" + jsonData.data[244]+\"\", function () {\r",
+							"    pm.expect(\"Lukas\").to.eql(jsonData.data[244]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "b31f14ae-b9e5-44de-8ce8-b010dcd33dff",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://www.randomlists.com/data/names-male.json"
+			},
+			"response": []
+		},
+		{
+			"name": "XML",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "195f82d6-847e-44e8-aecb-1a0dccab82a4",
+						"exec": [
+							"var jsonObject = xml2Json(responseBody);\r",
+							"console.log(jsonObject.TravelerinformationResponse.travelers.Travelerinformation[9].email);\r",
+							"\r",
+							"let travelersEmail = jsonObject.TravelerinformationResponse.travelers.Travelerinformation[9].email;\r",
+							"\r",
+							"// Test One: Test to confirm email in XML file\r",
+							"\r",
+							"pm.test(\"Confirm the email is \" + travelersEmail +\"\", function () {\r",
+							"    pm.expect(\"karen@mail.ru\").to.eql(travelersEmail);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "6a3172f5-e347-437c-929a-519373291204",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://restapi.adequateshop.com/api/Traveler?page=1",
+					"protocol": "http",
+					"host": [
+						"restapi",
+						"adequateshop",
+						"com"
+					],
+					"path": [
+						"api",
+						"Traveler"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bonus lesson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7db380b2-3271-4ac0-bceb-f1026f861001",
+						"exec": [
+							"//Bonus lesson 2: Request execution order\r",
+							"//postman.setNextRequest(null)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "c8163960-07e7-4b47-8fb4-0cf9e1489c59",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"kminchelle\",\r\n    \"password\": \"OlelplR\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://dummyjson.com/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Hide sensitive info",
+			"_postman_id": "5b2f9759-9911-493b-bc1c-e74b5248cd29",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "{{apiKey}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://postman-echo.com/get"
+			},
+			"response": []
+		},
+		{
+			"name": "Use variable from files",
+			"_postman_id": "bb863c22-471c-4e80-9976-0a79309fdf03",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": {{name}},\r\n    \"location\": {{location}},\r\n    \"username\": {{username}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://postman-echo.com/post?Id={{userId}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "Id",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "ebd77cd2-5b28-46cd-a28e-e0f3dd505234",
+			"key": "cookiesResponse",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

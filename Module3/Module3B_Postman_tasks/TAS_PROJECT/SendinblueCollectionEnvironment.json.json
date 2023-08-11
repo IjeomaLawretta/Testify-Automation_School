@@ -1,0 +1,27 @@
+{
+	"id": "e925e4b1-b17f-44be-b9b3-7364178aa0ce",
+	"name": "SendinblueCllectionEnvironment",
+	"values": [
+		{
+			"key": "api-key",
+			"value": "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",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "bookId",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "username",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-08-11T08:45:59.180Z",
+	"_postman_exported_using": "Postman/10.17.0-230720-0959"
+}

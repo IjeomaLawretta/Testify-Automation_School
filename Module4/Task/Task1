@@ -1,0 +1,10 @@
+public class Main {
+    public static void main(String[] args) {
+        
+        System.out.println("Hello world! This is Ijeoma's firs Java Project.");
+        System.out.println("Java seems to be an interesting and easy language to learn.");
+        System.out.println("I look forward to enjoying the lessons and becoming an expert with the Java language.");
+        System.out.println("Thank you Testify Academy!!");
+
+        }
+    }

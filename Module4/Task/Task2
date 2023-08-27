@@ -1,0 +1,32 @@
+public class JavaDataTypes {
+    public static void main(String[] args) {
+
+byte megaByte = 120;
+    System.out.println(megaByte);
+
+short gigaBytes = 1_000;
+    System.out.println(gigaByte);
+
+int kilometers = 200_000000;
+        System.out.println(kilometers);
+
+long money = -3707483648l;
+        System.out.println(money);
+
+float area = 3567891.82f;
+        System.out.println(area);
+
+double portion = 719870.97;
+        System.out.println(portion);
+
+char multipleChoice = 'd';
+        System.out.println(multipleChoice);
+
+boolean isOpened = true;
+        System.out.println(isOpened);
+
+boolean isClosed = false;
+        System.out.println(isClosed);
+
+    }
+}

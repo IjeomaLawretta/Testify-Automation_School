@@ -1,0 +1,18 @@
+public class JavaDataTypes {
+    public static void main(String[] args) {
+// string and string concatenation
+        String name = "Ijeoma is ";
+        String adjective = "26 years old.";
+
+        System.out.println(name + adjective);
+
+// string and primitive data type concatenation
+        String sentence = "Ijeoma is ";
+        int myAge = 26;
+        System.out.println(sentence + myAge);
+
+// using .concat() method
+        System.out.println(sentence.concat(myAge+"."));
+
+    }
+}

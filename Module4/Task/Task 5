@@ -1,0 +1,21 @@
+public class ConditionalRealtionalAndLogicalOperators {
+    public static void main(String[] args) {
+        //conditional statements
+        int number = 50;
+
+        // The false statement
+        if(number % 3 == 0) {
+            System.out.println("Fizz");
+         // The true statement   
+        } else if(number % 5 == 0) {
+            System.out.println("Buzz");
+            
+            // if both conditions are true
+        } else if(number % 3 == 0 && number % 5 == 0) {
+            System.out.println("FizzBuzz");
+        }
+        else {
+            System.out.println("This is out of the condition");
+        }
+    }
+}

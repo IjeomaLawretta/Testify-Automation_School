@@ -1,0 +1,10 @@
+public class StringOperations {
+    public static void main(String[] args) {
+        String word = "DEMOCRACY";
+
+        for(int i = word.length()-5; i >=1; i--) {
+            System.out.println(word.charAt(i));
+            
+        }
+    }
+}

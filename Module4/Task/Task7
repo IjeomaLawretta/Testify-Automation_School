@@ -1,0 +1,12 @@
+public class JavaArrays {
+    public static void main(String[] args) {
+       
+        String [] [] fruits  = new String [3][4]; 
+        
+        fruits [0] [0] = "strawberry";
+        fruits [0] [1] = "banana";
+        fruits [0] [2] = "raspberry";
+
+        System.out.println(Arrays.deepToString(fruits));
+    }
+}
